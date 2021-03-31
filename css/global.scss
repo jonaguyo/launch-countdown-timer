@@ -75,8 +75,7 @@ body {
                     justify-content: center;
                     width: 150px;
                     height: 150px;
-                    perspective: 1000px;
-                    box-shadow: 0px 10px 0px 0px rgba(black, 0.2);
+                    perspective: 700px;
 
                     .top {
                         position: absolute;
@@ -85,14 +84,20 @@ body {
                         height: 50%;
                         top: 0;
                         background-color: darken($dark-desaturated-blue, 5%);
+                        box-shadow: 0px 10px 0px 0px rgba(black, 0.2);
                     }
 
                     .top span {
                         position: absolute;
                         color: darken($soft-red, 5%);
-                        //background-color: blue;
+                        font-size: 1em;
                         bottom: 0;
                         transform: translateY(50%);
+                    }
+
+                    .top.current {
+                        transform-origin: 50% 100%;
+                        transition: 0.3s ease-in;
                     }
 
                     .bottom {
@@ -102,14 +107,21 @@ body {
                         height: 50%;
                         bottom: 0;
                         background-color: $dark-desaturated-blue;
+                        box-shadow: 0px 10px 0px 0px rgba(black, 0.2);
                     }
 
                     .bottom span {
                         position: absolute;
                         color: darken($soft-red, 5%);
-                        //background-color: red;
+                        font-size: 1em;
                         top: 0;
                         transform: translateY(-50%);
+                    }
+
+                    .bottom.new {
+                        transform-origin: 50% 0%;
+                        transition: 0.3s ease-out;
+                        transition-delay: 0.3s;
                     }
                 }
 
@@ -131,4 +143,8 @@ body {
             }
         }
     }
+}
+
+.no-transition {
+    transition: none !important;
 }

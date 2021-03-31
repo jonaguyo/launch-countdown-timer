@@ -133,10 +133,8 @@ body .content .global-countdown .counter .countdown {
           justify-content: center;
   width: 150px;
   height: 150px;
-  -webkit-perspective: 1000px;
-          perspective: 1000px;
-  -webkit-box-shadow: 0px 10px 0px 0px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 10px 0px 0px rgba(0, 0, 0, 0.2);
+  -webkit-perspective: 700px;
+          perspective: 700px;
 }
 
 body .content .global-countdown .counter .countdown .top {
@@ -146,14 +144,24 @@ body .content .global-countdown .counter .countdown .top {
   height: 50%;
   top: 0;
   background-color: #2a2c41;
+  -webkit-box-shadow: 0px 10px 0px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 10px 0px 0px rgba(0, 0, 0, 0.2);
 }
 
 body .content .global-countdown .counter .countdown .top span {
   position: absolute;
   color: #fa4774;
+  font-size: 1em;
   bottom: 0;
   -webkit-transform: translateY(50%);
           transform: translateY(50%);
+}
+
+body .content .global-countdown .counter .countdown .top.current {
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
 }
 
 body .content .global-countdown .counter .countdown .bottom {
@@ -163,14 +171,26 @@ body .content .global-countdown .counter .countdown .bottom {
   height: 50%;
   bottom: 0;
   background-color: #343650;
+  -webkit-box-shadow: 0px 10px 0px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 10px 0px 0px rgba(0, 0, 0, 0.2);
 }
 
 body .content .global-countdown .counter .countdown .bottom span {
   position: absolute;
   color: #fa4774;
+  font-size: 1em;
   top: 0;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+}
+
+body .content .global-countdown .counter .countdown .bottom.new {
+  -webkit-transform-origin: 50% 0%;
+          transform-origin: 50% 0%;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
 }
 
 body .content .global-countdown .counter .countdown > div {
@@ -193,5 +213,10 @@ body .content .global-countdown .counter .countdown-title {
   text-align: center;
   text-transform: uppercase;
   color: #8486a9;
+}
+
+.no-transition {
+  -webkit-transition: none !important;
+  transition: none !important;
 }
 /*# sourceMappingURL=global.css.map */
