@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Red Hat Text';
+  font-size: 14px;
+  color: white;
+}
+
+@-webkit-keyframes flip {
+  from {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    background-color: #2a2c41;
+  }
+  to {
+    -webkit-transform: rotateX(-90deg);
+            transform: rotateX(-90deg);
+    background-color: #161722;
+  }
+}
+
+@keyframes flip {
+  from {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    background-color: #2a2c41;
+  }
+  to {
+    -webkit-transform: rotateX(-90deg);
+            transform: rotateX(-90deg);
+    background-color: #161722;
+  }
+}
+
+@-webkit-keyframes inverse {
+  from {
+    -webkit-transform: rotateX(90deg);
+            transform: rotateX(90deg);
+    background-color: #53567f;
+  }
+  to {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    background-color: #343650;
+  }
+}
+
+@keyframes inverse {
+  from {
+    -webkit-transform: rotateX(90deg);
+            transform: rotateX(90deg);
+    background-color: #53567f;
+  }
+  to {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    background-color: #343650;
+  }
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+  background: url("../images/pattern-hills.svg") bottom, -webkit-gradient(linear, left top, left bottom, from(#191a24), to(#1e1f29));
+  background: url("../images/pattern-hills.svg") bottom, linear-gradient(#191a24, #1e1f29);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+body .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 500px;
+  letter-spacing: 7px;
+}
+
+body .content h1 {
+  font-size: 2em;
+  text-transform: uppercase;
+}
+
+body .content .global-countdown {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .content .global-countdown .counter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 20px;
+}
+
+body .content .global-countdown .counter .countdown {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 150px;
+  height: 150px;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+  -webkit-box-shadow: 0px 10px 0px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 10px 0px 0px rgba(0, 0, 0, 0.2);
+}
+
+body .content .global-countdown .counter .countdown .top {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 50%;
+  top: 0;
+  background-color: #2a2c41;
+}
+
+body .content .global-countdown .counter .countdown .top span {
+  position: absolute;
+  color: #fa4774;
+  bottom: 0;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+}
+
+body .content .global-countdown .counter .countdown .bottom {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 50%;
+  bottom: 0;
+  background-color: #343650;
+}
+
+body .content .global-countdown .counter .countdown .bottom span {
+  position: absolute;
+  color: #fa4774;
+  top: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+body .content .global-countdown .counter .countdown > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 5em;
+  letter-spacing: 0px;
+  border-radius: 8px;
+}
+
+body .content .global-countdown .counter .countdown-title {
+  margin-top: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #8486a9;
+}
+/*# sourceMappingURL=global.css.map */
