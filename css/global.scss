@@ -51,17 +51,19 @@ body {
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
-        height: 500px;
+        height: 100%;
         letter-spacing: 7px;
 
         h1 {
             font-size: 2em;
             text-transform: uppercase;
+            margin-top: 20%;
         }
 
         .global-countdown {
             display: flex;
             justify-content: center;
+            margin-bottom: 20%;
 
             .counter {
                 display: flex;
@@ -73,8 +75,8 @@ body {
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    width: 150px;
-                    height: 150px;
+                    width: 140px;
+                    height: 140px;
                     perspective: 700px;
 
                     .top {
@@ -83,19 +85,27 @@ body {
                         width: 100%;
                         height: 50%;
                         top: 0;
-                        background-color: darken($dark-desaturated-blue, 5%);
-                        box-shadow: 0px 10px 0px 0px rgba(black, 0.2);
+                        border-radius: 8px 8px 0px 0px;
+                        box-shadow: inset 0px 10px -1px -10px rgba(black, 0.2), 0px 10px 0px 0px rgba(black, 0.2);
+                        background:
+                            linear-gradient(0deg, darken($dark-desaturated-blue, 5%) 0%, darken($dark-desaturated-blue, 5%) 100%),
+                            linear-gradient(0deg, darken($dark-desaturated-blue, 5%) 0%, darken($dark-desaturated-blue, 5%) 100%),
+                            radial-gradient(circle at 0 100%, rgba(black, 0.2) 8px, darken($dark-desaturated-blue, 5%) 8px),
+                            radial-gradient(circle at 100% 100%, rgba(black, 0.2) 8px, darken($dark-desaturated-blue, 5%) 8px);
+                        background-position: top left, top right, bottom left, bottom right;
+                        background-size: 50% 50%;
+                        background-repeat: no-repeat;
                     }
 
                     .top span {
                         position: absolute;
-                        color: darken($soft-red, 5%);
+                        color: rgba($soft-red, 0.8);
                         font-size: 1em;
                         bottom: 0;
                         transform: translateY(50%);
                     }
 
-                    .top.current {
+                    .top.switch {
                         transform-origin: 50% 100%;
                         transition: 0.3s ease-in;
                     }
@@ -106,19 +116,28 @@ body {
                         width: 100%;
                         height: 50%;
                         bottom: 0;
-                        background-color: $dark-desaturated-blue;
+                        border-radius: 0px 0px 8px 8px;
                         box-shadow: 0px 10px 0px 0px rgba(black, 0.2);
+                        background:
+                            radial-gradient(circle at 0% 0%, rgba(black, 0.05) 8px, $dark-desaturated-blue 8px),
+                            radial-gradient(circle at 100% 0%, rgba(black, 0.05) 8px, $dark-desaturated-blue 8px),
+                            linear-gradient(0deg, $dark-desaturated-blue 0%, $dark-desaturated-blue 100%),
+                            linear-gradient(0deg, $dark-desaturated-blue 0%, $dark-desaturated-blue 100%);
+                        background-position: top left, top right, bottom left, bottom right;
+                        background-size: 50% 50%;
+                        background-repeat: no-repeat;
                     }
 
                     .bottom span {
                         position: absolute;
-                        color: darken($soft-red, 5%);
+                        color: $soft-red;
                         font-size: 1em;
                         top: 0;
                         transform: translateY(-50%);
                     }
 
-                    .bottom.new {
+                    .bottom.switch {
+                        box-shadow: none;
                         transform-origin: 50% 0%;
                         transition: 0.3s ease-out;
                         transition-delay: 0.3s;
@@ -131,7 +150,6 @@ body {
                     justify-content: center;
                     font-size: 5em;
                     letter-spacing: 0px;
-                    border-radius: 8px;
                 }
 
                 .countdown-title {
@@ -143,6 +161,21 @@ body {
             }
         }
     }
+}
+
+i {
+    margin: 10px;
+    font-size: 2em;
+    color: $grayish-blue;
+}
+
+i:hover {
+    cursor: pointer;
+    color: $soft-red;
+}
+
+.shadow {
+    box-shadow: 0px 10px 0px 0px rgba(black, 0.2);
 }
 
 .no-transition {
